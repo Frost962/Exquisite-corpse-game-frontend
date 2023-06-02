@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -8,6 +9,19 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    axios
+      .post("http://localhost:5005/auth/login", {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        navigate("/home");
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
     // TODO: send a request to the server for authentication
     console.log(username, password);
