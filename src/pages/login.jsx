@@ -1,30 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:5005/auth/login", {
-        username: username,
-        password: password,
-      })
-      .then((response) => {
-        navigate("/home");
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-
     // TODO: send a request to the server for authentication
-    console.log(username, password);
+    console.log(userName, password);
   };
 
   return (
@@ -32,11 +18,11 @@ const Login = () => {
       <h2>login</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Username:
+          userName:
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={userName}
+            onChange={(e) => setuserName(e.target.value)}
           />
         </label>
         <label>
