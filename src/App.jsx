@@ -4,16 +4,20 @@ import Homepage from "./pages2/Homepage";
 import Login from "./pages2/Login";
 import Signup from "./pages2/Signup";
 import "./App.css";
+import AuthForm from "./components/Authform";
+import AuthContextWrapper from "./context/authContext";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Homepage />} />
-      </Routes>
-    </Router>
+    <AuthContextWrapper>
+      <Router>
+        <Routes>
+          <Route path="/" element={<AuthForm />} />
+          <Route path="/signup" element={<AuthForm />} />
+          <Route path="/home" element={<Homepage />} />
+        </Routes>
+      </Router>
+    </AuthContextWrapper>
   );
 }
 

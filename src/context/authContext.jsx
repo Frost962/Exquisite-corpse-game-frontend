@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const AuthContext = createContext();
-const AuthContextWrapper = ({ children }) => {
+export const AuthContextWrapper = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +17,7 @@ const AuthContextWrapper = ({ children }) => {
       const token = localStorage.getItem("token");
       if (token) {
         // Send the token, we expect a response with the user informations.
-        const response = await axios.get("http://localhost:3000/api/auth/me", {
+        const response = await axios.get("http://localhost:5005/auth/verify", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
