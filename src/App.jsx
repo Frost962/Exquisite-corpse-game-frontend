@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "../src/pages/Login";
-import Signup from "./pages/Signup.jsx";
-import Homepage from "./pages/Homepage.jsx";
+import Homepage from "./pages2/Homepage";
+import Login from "./pages2/Login";
+import Signup from "./pages2/Signup";
 import "./App.css";
 
-// comment
 function App() {
   return (
     <Router>
