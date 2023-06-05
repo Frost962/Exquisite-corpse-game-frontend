@@ -20,7 +20,7 @@ function Login() {
         console.log(response);
         // Store the token in local storage
         localStorage.setItem("authToken", response.data.authToken);
-        navigate("/");
+        navigate("/home");
       })
       .catch((error) => {
         // handle error
