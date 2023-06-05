@@ -27,7 +27,6 @@ function Signup() {
         console.error(error);
       });
 
-    // TODO: send a request to the server for user registration
     console.log(userName, password, email);
   };
 
