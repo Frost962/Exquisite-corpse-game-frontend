@@ -7,6 +7,7 @@ import "./App.css";
 import AuthForm from "./components/Authform";
 import AuthContextWrapper from "./context/authContext";
 import AllStories from "./components/AllStories";
+import CreateStory from "./pages2/CreateStory";
 
 function App() {
   return (
