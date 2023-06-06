@@ -1,0 +1,17 @@
+.storyCard {
+  height: 245px;
+  width: 190px;
+  border-radius: 5px;
+  background-color: darkblue;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  align-items: center;
+}
+
+.allStoryPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 100px;
+}
