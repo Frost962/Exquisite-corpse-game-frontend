@@ -14,7 +14,7 @@ export const AuthContextWrapper = ({ children }) => {
   const authenticateUser = async () => {
     try {
       // Get the token
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("authToken");
       console.log("token=", token);
       if (token) {
         // Send the token, we expect a response with the user informations.
