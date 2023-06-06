@@ -8,8 +8,7 @@ import AuthForm from "./components/Authform";
 import AuthContextWrapper from "./context/authContext";
 import AllStories from "./components/AllStories";
 import CreateStory from "./pages2/CreateStory";
-import OneStory from "./pages2/OneStory";
-import FavoriteStory from "./pages2/FavoriteStory";
+
 
 function App() {
   return (
@@ -20,9 +19,7 @@ function App() {
           <Route path="/signup" element={<AuthForm mode="Signup" />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/allstories" element={<AllStories />} />
-          <Route path="/create-story" element={<CreateStory />} />
-          <Route path="/one-story" element={<OneStory />} />
-          <Route path="/favorite-story" element={<FavoriteStory />} />
+
         </Routes>
       </Router>
     </AuthContextWrapper>
