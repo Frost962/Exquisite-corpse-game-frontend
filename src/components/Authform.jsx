@@ -29,6 +29,7 @@ const AuthForm = ({ mode }) => {
           "http://localhost:5005/auth/login",
           userToLogin
         );
+        navigate("/home");
         localStorage.setItem("token", response.data.token);
         setError("");
         await authenticateUser();
