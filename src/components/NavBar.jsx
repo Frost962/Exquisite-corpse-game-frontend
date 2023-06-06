@@ -14,16 +14,17 @@ const Navbar = () => {
   return (
     <nav className="Navbar">
       <ul>
+        <li>{user && user.userName}</li>
         <li>
           <NavLink to={"/home"}>Home</NavLink>
         </li>
         {!isLoggedIn && (
           <>
             <li>
-              <NavLink to={"/"}>Log in</NavLink>
+              <NavLink to={"/"}>Login</NavLink>
             </li>
             <li>
-              <NavLink to={"/auth/signup"}>Sign up</NavLink>
+              <NavLink to={"/signup"}>Sign up</NavLink>
             </li>
           </>
         )}
