@@ -17,7 +17,7 @@ function App() {
           <Route path="/signup" element={<AuthForm mode="Signup" />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/allstories" element={<AllStories />} />
-          <Route path="/create-story" element={<CreateStory />} />
+          {/*           <Route path="/create-story" element={<CreateStory />} /> */}
         </Routes>
       </Router>
     </AuthContextWrapper>

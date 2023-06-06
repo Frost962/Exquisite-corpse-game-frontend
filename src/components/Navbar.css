@@ -1,29 +1,34 @@
 .Navbar {
   height: 4.5rem;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: white;
   padding: 0 2rem;
-  & a {
-    color: inherit;
-    text-decoration: none;
-  }
-  & li {
-    transition: all 1s ease-in-out;
-  }
-  & li:hover {
-    translate: 0 -0.25rem;
-    transition: all 200ms ease-in-out;
-  }
-  & a.active {
-    color: dodgerblue;
-  }
+}
 
-  & ul {
-    height: 100%;
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    justify-content: flex-end;
-    align-items: center;
-  }
+.Navbar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.Navbar li {
+  padding: 5px;
+  transition: all 1s ease-in-out;
+}
+
+.Navbar li:hover {
+  transform: translateY(-0.25rem);
+  transition: all 200ms ease-in-out;
+}
+
+.Navbar a.active {
+  color: dodgerblue;
+}
+
+.Navbar ul {
+  height: 100%;
+  display: flex;
+  margin-right: 1rem;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
 }
