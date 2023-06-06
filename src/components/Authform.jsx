@@ -3,6 +3,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
+import Navbar from "./NavBar";
 
 const AuthForm = ({ mode }) => {
   const { authenticateUser } = useContext(AuthContext);
@@ -41,6 +42,7 @@ const AuthForm = ({ mode }) => {
   };
   return (
     <div>
+      <Navbar />
       <form onSubmit={handleSubmit}>
         {mode === "Signup" && (
           <div>

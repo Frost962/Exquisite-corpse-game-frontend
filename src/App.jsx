@@ -6,6 +6,7 @@ import Signup from "./pages2/Signup";
 import "./App.css";
 import AuthForm from "./components/Authform";
 import AuthContextWrapper from "./context/authContext";
+import AllStories from "./components/AllStories";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Route path="/" element={<AuthForm mode="Log in" />} />
           <Route path="/signup" element={<AuthForm mode="Signup" />} />
           <Route path="/home" element={<Homepage />} />
+          <Route path="/allstories" element={<AllStories />} />
+          <Route path="/create-story" element={<CreateStory />} />
         </Routes>
       </Router>
     </AuthContextWrapper>
