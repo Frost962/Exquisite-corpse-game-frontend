@@ -6,22 +6,24 @@ import { AuthContext } from "../context/authContext";
 
 const AuthForm = ({ mode }) => {
   const { authenticateUser } = useContext(AuthContext);
-  const [username, setUsername] = useState("");
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  console.log("mode=", mode);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const userToLogin = { username, password };
+      const userToLogin = { userName, email, password };
       if (mode === "Signup") {
         const response = await axios.post(
           "http://localhost:5005/auth/signup",
           userToLogin
         );
-        navigate("/login");
+        navigate("/");
       } else {
         const response = await axios.post(
           "http://localhost:5005/auth/login",
@@ -41,11 +43,11 @@ const AuthForm = ({ mode }) => {
       <form onSubmit={handleSubmit}>
         {mode === "Signup" && (
           <div>
-            <label htmlFor="username">Username: </label>
+            <label htmlFor="userName">Username: </label>
             <input
               type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
             />
           </div>
         )}
@@ -68,7 +70,7 @@ const AuthForm = ({ mode }) => {
 
         <p style={{ color: "red" }}>{error}</p>
 
-        <button>{mode}SUBMIT</button>
+        <button>{mode}</button>
       </form>
     </div>
   );

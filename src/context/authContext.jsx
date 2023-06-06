@@ -15,14 +15,16 @@ export const AuthContextWrapper = ({ children }) => {
     try {
       // Get the token
       const token = localStorage.getItem("token");
+      console.log("token=", token);
       if (token) {
+        console.log("if coucou");
         // Send the token, we expect a response with the user informations.
         const response = await axios.get("http://localhost:5005/auth/verify", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(response);
+        console.log("response=", response);
 
         // Set the received user infos to my user state
         // Set is logged in to true.
