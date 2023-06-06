@@ -30,7 +30,7 @@ const AuthForm = ({ mode }) => {
           userToLogin
         );
         navigate("/home");
-        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("authToken", response.data.authToken);
         setError("");
         await authenticateUser();
       }
