@@ -12,8 +12,8 @@ function App() {
     <AuthContextWrapper>
       <Router>
         <Routes>
-          <Route path="/" element={<AuthForm />} />
-          <Route path="/signup" element={<AuthForm />} />
+          <Route path="/" element={<AuthForm mode="Log in" />} />
+          <Route path="/signup" element={<AuthForm mode="Signup" />} />
           <Route path="/home" element={<Homepage />} />
         </Routes>
       </Router>
