@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./Allstories.css";
 
 function AllStories() {
   const [stories, setStories] = useState([]);
@@ -18,16 +19,18 @@ function AllStories() {
   }, []);
 
   return (
-    <div>
+    <>
       <h1>All Stories</h1>;
-      {stories.map((story) => (
-        <div key={story._id}>
-          <h2>{story.title}</h2>
-          <p>created by: {story.creator.userName}</p>
-          <p>{story.body}</p>
-        </div>
-      ))}
-    </div>
+      <div className="allStoryPage">
+        {stories.map((story) => (
+          <div className="storyCard" key={story._id}>
+            <h2>{story.title}</h2>
+            <p>created by: {story.creator.userName}</p>
+            <p>{story.body}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
