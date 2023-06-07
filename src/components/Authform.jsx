@@ -24,13 +24,13 @@ const AuthForm = ({ mode }) => {
           "http://localhost:5005/auth/signup",
           userToLogin
         );
-        navigate("/");
+        navigate("/login");
       } else {
         const response = await axios.post(
           "http://localhost:5005/auth/login",
           userToLogin
         );
-        navigate("/home");
+        navigate("/");
         localStorage.setItem("authToken", response.data.authToken);
         setError("");
         await authenticateUser();
@@ -42,7 +42,6 @@ const AuthForm = ({ mode }) => {
   };
   return (
     <div>
-      <Navbar />
       <form onSubmit={handleSubmit}>
         {mode === "Signup" && (
           <div>

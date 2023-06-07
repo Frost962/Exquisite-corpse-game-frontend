@@ -16,12 +16,12 @@ const Navbar = () => {
       <ul>
         <li>{user && user.userName}</li>
         <li>
-          <NavLink to={"/home"}>Home</NavLink>
+          <NavLink to={"/"}>Home</NavLink>
         </li>
         {!isLoggedIn && (
           <>
             <li>
-              <NavLink to={"/"}>Login</NavLink>
+              <NavLink to={"/login"}>Login</NavLink>
             </li>
             <li>
               <NavLink to={"/signup"}>Sign up</NavLink>
