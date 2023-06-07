@@ -18,6 +18,15 @@ const Navbar = () => {
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
+        <li>
+          <NavLink to={"/userstories"}>Your stories</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/allstories"}>Stories List</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/createstory"}>Create a Story</NavLink>
+        </li>
         {!isLoggedIn && (
           <>
             <li>
