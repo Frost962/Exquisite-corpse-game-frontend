@@ -6,7 +6,6 @@ import AuthContextWrapper from "./context/authContext";
 import AllStories from "./pages2/AllStories";
 import CreateStory from "./pages2/CreateStory";
 import OneStory from "./pages2/OneStory";
-import FavoriteStory from "./pages2/FavoriteStory";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
 import ParticipantsStories from "./pages2/ParticipantsStories";
@@ -27,14 +26,9 @@ function App() {
 
               <Route element={<ProtectedRoute />}>
                 <Route path="/allstories" element={<AllStories />} />
-                <Route path="/creatstory" element={<CreateStory />} />
-                <Route path="/onestory" element={<OneStory />} />
-
-                <Route path="/favoritestory" element={<FavoriteStory />} />
-                <Route
-                  path="/participantsstories"
-                  element={<ParticipantsStories />}
-                />
+                <Route path="/createstory" element={<CreateStory />} />
+                <Route path="/stories/:id" element={<OneStory />} />
+                <Route path="/userstories" element={<ParticipantsStories />} />
               </Route>
             </Route>
           </Routes>
