@@ -34,7 +34,6 @@ const ParticipantsStories = () => {
 
   return (
     <>
-      <Navbar />
       <div>
         <h2>Your Stories</h2>
         {stories.map((story) => (
