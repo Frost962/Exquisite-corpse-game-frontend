@@ -8,17 +8,18 @@ const CreateStory = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const fd = new FormData();
-    fd.append("title", title);
-    fd.append("content", content);
+    const storyData = { title };
 
     try {
-      const response = await axios.post("/api/stories", fd, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      console.log(response.data);
+      const response = await axios.post(
+        "http://localhost:5005/stories",
+        storyData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        }
+      );
     } catch (error) {
       console.error(error);
     }
@@ -34,13 +35,13 @@ const CreateStory = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <textarea
+      {/* <textarea
         name="content"
         placeholder="Story Content"
         required
         value={content}
         onChange={(e) => setContent(e.target.value)}
-      />
+      /> */}
       <button type="submit">Create Story</button>
     </form>
   );
