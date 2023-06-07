@@ -10,7 +10,7 @@ const ProtectedRoute = () => {
   }
   console.table(isLoading, isLoggedIn, user);
   if (!isLoggedIn) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={"/login"} />;
   }
   if (isLoggedIn) {
     return <Outlet />;
