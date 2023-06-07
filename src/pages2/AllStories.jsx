@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Allstories.css";
+import "../components/AllStories.css";
 
 function AllStories() {
   const [stories, setStories] = useState([]);

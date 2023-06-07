@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/authContext";
 import axios from "axios";
-import Navbar from "./NavBar";
+import Navbar from "../components/NavBar";
 
 const ParticipantsStories = () => {
   const { user } = useContext(AuthContext);
