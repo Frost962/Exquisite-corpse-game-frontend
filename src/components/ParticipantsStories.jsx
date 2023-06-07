@@ -12,8 +12,17 @@ const ParticipantsStories = () => {
     const fetchStories = async () => {
       try {
         if (user) {
-          const res = await axios.get(`/user/${user._id}`);
+          const authToken = localStorage.getItem("authToken");
+          const res = await axios.get(
+            `http://localhost:5005/stories/user/${user._id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
           setStories(res.data);
+          console.log("resssssssss", res.data);
         }
       } catch (error) {
         console.error(error);
@@ -23,18 +32,12 @@ const ParticipantsStories = () => {
     fetchStories();
   }, [user]);
 
-  const userStories = stories.filter(
-    (story) =>
-      story.creator._id === user._id ||
-      story.contributors.some((contributors) => contributors._id === user._id)
-  );
-
   return (
     <>
       <Navbar />
       <div>
         <h2>Your Stories</h2>
-        {userStories.map((story) => (
+        {stories.map((story) => (
           <div key={story._id}>
             <h3>{story.title}</h3>
             <p>Created by: {story.creator.userName}</p>
