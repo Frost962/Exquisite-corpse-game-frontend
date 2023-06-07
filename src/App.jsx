@@ -16,13 +16,27 @@ function App() {
     <AuthContextWrapper>
       <Router>
         <Routes>
-          <Route path="/" element={<AuthForm mode="Log in" />} />
-          <Route path="/signup" element={<AuthForm mode="Signup" />} />
-          <Route path="/home" element={<Homepage />} />
-          <Route path="/allstories" element={<AllStories />} />
-          <Route path="/create-story" element={<CreateStory />} />
-          <Route path="/one-story" element={<OneStory />} />
-          <Route path="/favorite-story" element={<FavoriteStory />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Homepage />}></Route>
+            <Route element={<IsAdmin />}></Route>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/allstories" element={<AllStories />} />
+              <Route path="/creatstory" element={<CreateStory />} />
+              <Route path="/onestory" element={<OneStory />} />
+              <Route path="/favoritestory" element={<FavoriteStory />} />
+              <Route
+                path="/participantsstories"
+                element={<ParticipantsStories />}
+              />
+            </Route>
+
+            <Route path="/auth">
+              <Route path="login" element={<authForm mode="Log in" />} />
+              <Route path="signup" element={<authForm mode="Signup" />} />
+            </Route>
+
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </Router>
     </AuthContextWrapper>
