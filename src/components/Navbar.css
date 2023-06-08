@@ -1,6 +1,8 @@
 .Navbar {
+  display: flex;
+  justify-content: space-between;
   height: 4.5rem;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(62, 67, 95);
   color: white;
   padding: 0 2rem;
 }
@@ -21,7 +23,7 @@
 }
 
 .Navbar a.active {
-  color: dodgerblue;
+  color: rgb(112, 126, 140);
 }
 
 .Navbar ul {
@@ -31,4 +33,17 @@
   list-style: none;
   justify-content: flex-end;
   align-items: center;
+}
+
+.Navbar-left,
+.Navbar-right {
+  height: 100%;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.Navbar-right {
+  margin-right: 1rem;
+  justify-content: flex-end;
 }

@@ -1,29 +1,50 @@
-.storyCard {
-  height: 245px;
-  width: 190px;
-  border-radius: 5px;
-  background-color: darkblue;
-  margin: 50px;
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  align-items: center;
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(68, 73, 100, 1);
+  margin: 0;
+  padding: 0;
 }
 
-.storyCard h2 {
-  margin-bottom: 10px;
+h1 {
+  text-align: center;
   color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
 }
 
-.storyCard p {
-  color: #666;
+.allStoryPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.storyCard {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  background-color: rgb(205, 161, 49);
 }
 
 .storyCard:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  .allStoryPage {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 100px;
-  }
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.storyCard h2 {
+  color: rgba(68, 73, 100, 1);
+  margin-bottom: 10px;
+}
+
+.storyCard p {
+  color: rgba(68, 73, 100, 1);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
