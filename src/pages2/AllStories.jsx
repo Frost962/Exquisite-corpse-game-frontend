@@ -24,8 +24,8 @@ function AllStories() {
       <h1>All Stories</h1>;
       <div className="allStoryPage">
         {stories.map((story) => (
-          <Link to={`/stories/${story.id}`} key={story.id}>
-            <div className="storyCard" key={story._id}>
+          <Link to={`/stories/${story._id}`} key={story._id}>
+            <div className="storyCard">
               <h2>{story.title}</h2>
               <p>created by: {story.creator.userName}</p>
               <p>{story.body}</p>
