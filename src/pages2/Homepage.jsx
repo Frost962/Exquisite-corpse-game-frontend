@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/NavBar";
+import "./HomepageStyle.css";
 
 function Homepage() {
   return (
@@ -12,8 +12,8 @@ function Homepage() {
           across the world take over!
         </p>
         <p>
-          Here stories are eternal but certainly not unchangeable. You can add a
-          chapter to anyone's story!
+          Here stories are eternal, but certainly not unchangeable. You can add
+          a chapter to anyone's story!
         </p>
       </div>
     </div>

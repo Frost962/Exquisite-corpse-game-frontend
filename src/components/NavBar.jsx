@@ -13,10 +13,12 @@ const Navbar = () => {
   };
   return (
     <nav className="Navbar">
-      <ul>
+      <ul className="Navbar-left">
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
+      </ul>
+      <ul className="Navbar-right">
         <li>
           <NavLink to={"/userstories"}>{user && user.userName}</NavLink>
         </li>

@@ -1,7 +1,13 @@
+body {
+  background-color: rgba(68, 73, 100, 1);
+}
+
 .homepage-container {
   text-align: center;
   padding: 2rem;
   background: #f9f9f9;
+  height: 1000px;
+  background-color: rgba(68, 73, 100, 1);
 }
 
 .homepage-container h1 {
@@ -14,4 +20,8 @@
   font-size: 1.25rem;
   color: #666;
   line-height: 1.6;
+}
+
+.homepage-content p {
+  margin-top: 50px;
 }
