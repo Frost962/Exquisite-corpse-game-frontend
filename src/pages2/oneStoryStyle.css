@@ -1,0 +1,15 @@
+.oneStory-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.delete-chapter-button {
+  position: fixed;
+  padding-bottom: 100px;
+  left: 50%;
+}

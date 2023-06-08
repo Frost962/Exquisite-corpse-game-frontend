@@ -40,7 +40,7 @@ const Navbar = () => {
         )}
 
         <>
-          <li>
+          <li className="logoutButton">
             <button onClick={logout}>Logout</button>
           </li>
         </>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Layout from "../components/Layout";
+import "./oneStoryStyle.css";
 
 const OneStory = () => {
   const [story, setStory] = useState();
@@ -105,7 +105,7 @@ const OneStory = () => {
   if (!story) return <div>Loading</div>;
 
   return (
-    <div>
+    <div className="oneStory-container">
       <h2>{story.title}</h2>
       <p>{story.content}</p>
       {chapters.map((chapter) => (
@@ -150,7 +150,9 @@ const OneStory = () => {
         onChange={(e) => setNewChapter(e.target.value)}
       />
       <button onClick={addChapter}>Add Chapter</button>
-      <button onClick={deleteLastChapter}>Delete Last Chapter</button>
+      <button className="delete-chapter-button" onClick={deleteLastChapter}>
+        Delete Last Chapter
+      </button>
     </div>
   );
 };
