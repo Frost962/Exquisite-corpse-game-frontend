@@ -20,8 +20,8 @@ h1 {
 }
 
 .storyCard {
-  width: 300px;
-  border: 1px solid #ddd;
+  height: 245px;
+  width: 190px;
   border-radius: 5px;
   margin: 20px;
   padding: 20px;
