@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 
 const OneStory = () => {
-  const [story, setStory] = useState([]);
+  const [story, setStory] = useState();
   const [chapters, setChapters] = useState([]); // to hold chapters
   const [newChapter, setNewChapter] = useState(""); // to hold new chapter content
   const { id } = useParams();
@@ -102,7 +102,7 @@ const OneStory = () => {
     getStory();
   }, []);
 
-  if (!story.length) return <div>Loading</div>;
+  if (!story) return <div>Loading</div>;
 
   return (
     <div>
