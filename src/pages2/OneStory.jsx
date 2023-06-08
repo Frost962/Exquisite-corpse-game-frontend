@@ -11,6 +11,7 @@ const OneStory = () => {
   const [editingChapter, setEditingChapter] = useState(null);
   const [updatedContent, setUpdatedContent] = useState("");
 
+  console.log(id);
   const getStory = async () => {
     try {
       const res = await axios.get(
@@ -101,7 +102,8 @@ const OneStory = () => {
     getStory();
   }, []);
 
-  if (!stories.length) return <div>Loading</div>;
+  if (!story.length) return <div>Loading</div>;
+
   return (
     <div>
       <h2>{story.title}</h2>
