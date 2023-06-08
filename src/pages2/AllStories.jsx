@@ -21,6 +21,7 @@ function AllStories() {
     getStories();
   }, []);
 
+  if (!stories.length) return <div>Loading</div>;
   return (
     <>
       <h1>All Stories</h1>;
