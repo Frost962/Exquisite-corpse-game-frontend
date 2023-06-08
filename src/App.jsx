@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
 import ParticipantsStories from "./pages2/ParticipantsStories";
 import AuthForm from "./components/Authform";
+import NotFoundPage from "./pages2/NotFoundPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Homepage />}></Route>
+              <Route path="/NotFound" element={<NotFoundPage />}></Route>
               <Route>
                 <Route path="/login" element={<AuthForm mode="Log in" />} />
                 <Route path="/signup" element={<AuthForm mode="Signup" />} />
