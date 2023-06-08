@@ -11,17 +11,20 @@ const OneStory = () => {
 
   const getStory = async () => {
     try {
-      const res = await axios.get(`http://localhost:5005/stories/${id}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-        },
-      });
+      const res = await axios.get(
+        `https://exquisite-corpse.onrender.com/stories/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        }
+      );
       setStory(res.data);
     } catch (error) {
       console.error(error);
     }
     const chaptersRes = await axios.get(
-      `http://localhost:5005/chapters/${id}`,
+      `https://exquisite-corpse.onrender.com/chapters/${id}`,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -33,7 +36,7 @@ const OneStory = () => {
   const addChapter = async () => {
     // Make a POST request to create a new chapter
     const res = await axios.post(
-      `http://localhost:5005/chapters/${id}/`,
+      `https://exquisite-corpse.onrender.com/chapters/${id}/`,
       { content: newChapter },
       {
         headers: {

@@ -12,7 +12,7 @@ const CreateStory = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5005/stories",
+        "https://exquisite-corpse.onrender.com/stories",
         storyData,
         {
           headers: {
