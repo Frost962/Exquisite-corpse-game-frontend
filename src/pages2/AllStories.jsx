@@ -13,7 +13,6 @@ function AllStories() {
           "https://exquisite-corpse.onrender.com/stories"
         );
         setStories(response.data);
-        console.log("erfraferfefzfvfazfzfzfzaeaz", response);
       } catch (error) {
         console.error("Error fetching all stories:", error);
       }

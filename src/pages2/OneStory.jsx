@@ -63,6 +63,7 @@ const OneStory = () => {
           },
         }
       );
+      console.log("lastchapterid", lastChapter._id);
       // Filter out the deleted chapter from state
       setChapters(
         chapters.filter((chapter) => chapter._id !== lastChapter._id)
