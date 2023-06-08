@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5005/auth/login", {
+      .post("https://exquisite-corpse.onrender.com/auth/login", {
         email,
         password,
       })

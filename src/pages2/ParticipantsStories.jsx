@@ -14,7 +14,7 @@ const ParticipantsStories = () => {
         if (user) {
           const authToken = localStorage.getItem("authToken");
           const res = await axios.get(
-            `http://localhost:5005/stories/user/${user._id}`,
+            `https://exquisite-corpse.onrender.com/stories/user/${user._id}`,
             {
               headers: {
                 Authorization: `Bearer ${authToken}`,

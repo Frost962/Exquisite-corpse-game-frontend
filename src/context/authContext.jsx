@@ -18,11 +18,14 @@ export const AuthContextWrapper = ({ children }) => {
       console.log("token=", token);
       if (token) {
         // Send the token, we expect a response with the user informations.
-        const response = await axios.get("http://localhost:5005/auth/verify", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://exquisite-corpse.onrender.com/auth/verify",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         console.log("response=", response);
 
         // Set the received user infos to my user state

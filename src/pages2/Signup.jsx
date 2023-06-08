@@ -12,7 +12,7 @@ function Signup() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5005/auth/signup", {
+      .post("https://exquisite-corpse.onrender.com/auth/signup", {
         userName: userName,
         password: password,
         email: email,

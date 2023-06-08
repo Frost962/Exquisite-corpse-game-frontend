@@ -9,7 +9,9 @@ function AllStories() {
   useEffect(() => {
     const getStories = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/stories");
+        const response = await axios.get(
+          "https://exquisite-corpse.onrender.com/stories"
+        );
         setStories(response.data);
       } catch (error) {
         console.error("Error fetching all stories:", error);

@@ -21,13 +21,13 @@ const AuthForm = ({ mode }) => {
       const userToLogin = { userName, email, password };
       if (mode === "Signup") {
         const response = await axios.post(
-          "http://localhost:5005/auth/signup",
+          "https://exquisite-corpse.onrender.com/auth/signup",
           userToLogin
         );
         navigate("/login");
       } else {
         const response = await axios.post(
-          "http://localhost:5005/auth/login",
+          "https://exquisite-corpse.onrender.com/auth/login",
           userToLogin
         );
         navigate("/");
