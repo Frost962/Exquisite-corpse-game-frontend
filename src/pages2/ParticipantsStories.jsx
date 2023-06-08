@@ -32,6 +32,8 @@ const ParticipantsStories = () => {
     fetchStories();
   }, [user]);
 
+  if (!stories.length) return <div>Loading</div>;
+
   return (
     <>
       <div>
@@ -40,7 +42,10 @@ const ParticipantsStories = () => {
           <Link to={`/stories/${story._id}`} key={story._id}>
             <div>
               <h3>{story.title}</h3>
-              <p>Created by: {story.creator.userName}</p>
+              <p>
+                {" "}
+                created by: {story.creator ? story.creator.userName : "Unknown"}
+              </p>
               <p>
                 Contributors:{" "}
                 {story.contributors.map((c) => c.userName).join(", ")}
