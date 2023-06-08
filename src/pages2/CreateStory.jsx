@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateStory = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,6 +23,7 @@ const CreateStory = () => {
           },
         }
       );
+      navigate("/userstories");
     } catch (error) {
       console.error(error);
     }
@@ -42,6 +46,7 @@ const CreateStory = () => {
         value={content}
         onChange={(e) => setContent(e.target.value)}
       /> */}
+
       <button type="submit">Create Story</button>
     </form>
   );

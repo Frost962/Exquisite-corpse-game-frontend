@@ -14,12 +14,11 @@ const Navbar = () => {
   return (
     <nav className="Navbar">
       <ul>
-        <li>{user && user.userName}</li>
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
         <li>
-          <NavLink to={"/userstories"}>Your stories</NavLink>
+          <NavLink to={"/userstories"}>{user && user.userName}</NavLink>
         </li>
         <li>
           <NavLink to={"/allstories"}>Stories List</NavLink>

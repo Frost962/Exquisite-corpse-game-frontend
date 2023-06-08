@@ -13,10 +13,10 @@ const Footer = () => {
       <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
         <div>© 2023 "We still didn't decide the name :) " App</div>
         <div>
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/NotFound">Privacy Policy</Link>
         </div>
         <div>
-          <Link to="/terms-of-service">Terms of Service</Link>
+          <Link to="/NotFound">Terms of Service</Link>
         </div>
       </div>
     </footer>
