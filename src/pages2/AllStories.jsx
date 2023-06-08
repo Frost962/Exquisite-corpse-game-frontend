@@ -30,7 +30,9 @@ function AllStories() {
           <Link to={`/stories/${story._id}`} key={story._id}>
             <div className="storyCard">
               <h2>{story.title}</h2>
-              <p>created by: {story.creator.userName}</p>
+              <p>
+                created by: {story.creator ? story.creator.userName : "Unknown"}
+              </p>
               <p>{story.body}</p>
             </div>
           </Link>
