@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
+import "./OneStory.css";
 
 const OneStory = () => {
   const [story, setStory] = useState();
@@ -105,11 +106,10 @@ const OneStory = () => {
   if (!story) return <div>Loading</div>;
 
   return (
-    <div>
-      <h2>{story.title}</h2>
-      <p>{story.content}</p>
+    <div className="oneStoryPage">
+      <h1>{story.title}</h1>
       {chapters.map((chapter) => (
-        <div key={chapter._id}>
+        <div className="chapterCard" key={chapter._id}>
           {chapter._id === editingChapter ? (
             <>
               <input
