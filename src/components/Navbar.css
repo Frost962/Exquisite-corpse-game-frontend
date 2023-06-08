@@ -5,6 +5,7 @@
   background-color: rgb(62, 67, 95);
   color: white;
   padding: 0 2rem;
+  margin: 0;
 }
 
 .Navbar a {
@@ -46,4 +47,22 @@
 .Navbar-right {
   margin-right: 1rem;
   justify-content: flex-end;
+}
+
+.logoutButton {
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+  background-color: wheat;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.logoutButton:hover {
+  background-color: #d32f2f; /* Darker red */
 }

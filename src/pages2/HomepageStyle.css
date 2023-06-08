@@ -2,18 +2,25 @@ body {
   background-color: rgba(68, 73, 100, 1);
 }
 
+header {
+  background-color: rgb(205, 161, 49) !important;
+}
+
 .homepage-container {
   text-align: center;
   padding: 2rem;
   background: #f9f9f9;
   height: 1000px;
   background-color: rgba(68, 73, 100, 1);
+  margin: 0;
 }
 
 .homepage-container h1 {
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 1rem;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .homepage-content {
@@ -24,4 +31,5 @@ body {
 
 .homepage-content p {
   margin-top: 50px;
+  color: rgb(239, 228, 209);
 }
