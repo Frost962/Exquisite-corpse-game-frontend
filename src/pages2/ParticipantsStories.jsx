@@ -22,7 +22,6 @@ const ParticipantsStories = () => {
             }
           );
           setStories(res.data);
-          console.log("resssssssss", res.data);
         }
       } catch (error) {
         console.error(error);

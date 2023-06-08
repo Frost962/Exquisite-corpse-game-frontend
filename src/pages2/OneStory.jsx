@@ -8,6 +8,8 @@ const OneStory = () => {
   const [chapters, setChapters] = useState([]); // to hold chapters
   const [newChapter, setNewChapter] = useState(""); // to hold new chapter content
   const { id } = useParams();
+  const [editingChapter, setEditingChapter] = useState(null);
+  const [updatedContent, setUpdatedContent] = useState("");
 
   const getStory = async () => {
     try {
@@ -49,6 +51,51 @@ const OneStory = () => {
     setNewChapter("");
   };
 
+  const deleteLastChapter = async () => {
+    const lastChapter = chapters[chapters.length - 1];
+    if (!lastChapter) return; // guard clause in case there are no chapters
+    try {
+      await axios.delete(
+        `https://exquisite-corpse.onrender.com/chapters/${lastChapter._id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        }
+      );
+      // Filter out the deleted chapter from state
+      setChapters(
+        chapters.filter((chapter) => chapter._id !== lastChapter._id)
+      );
+    } catch (error) {
+      console.error("Error deleting chapter:", error);
+    }
+  };
+
+  const updateChapter = async (chapterId, updatedContent) => {
+    try {
+      const response = await axios.patch(
+        `https://exquisite-corpse.onrender.com/chapters/${chapterId}`,
+        { content: updatedContent },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        }
+      );
+      // Update the chapter in state
+      setChapters(
+        chapters.map((chapter) =>
+          chapter._id === chapterId
+            ? { ...chapter, content: response.data.content }
+            : chapter
+        )
+      );
+    } catch (error) {
+      console.error("Error updating chapter:", error);
+    }
+  };
+
   useEffect(() => {
     getStory();
   }, []);
@@ -62,8 +109,38 @@ const OneStory = () => {
       <p>{story.content}</p>
       {chapters.map((chapter) => (
         <div key={chapter._id}>
-          <p>{chapter.content}</p>
-          <p>{chapter.timestamp}</p>
+          {chapter._id === editingChapter ? (
+            <>
+              <input
+                type="text"
+                value={updatedContent}
+                onChange={(e) => setUpdatedContent(e.target.value)}
+              />
+              <button
+                onClick={() => {
+                  updateChapter(chapter._id, updatedContent);
+                  setEditingChapter(null);
+                  setUpdatedContent("");
+                }}
+              >
+                Update Chapter
+              </button>
+              <button onClick={() => setEditingChapter(null)}>Cancel</button>
+            </>
+          ) : (
+            <>
+              <p>{chapter.content}</p>
+              <p>{chapter.timestamp}</p>
+              <button
+                onClick={() => {
+                  setEditingChapter(chapter._id);
+                  setUpdatedContent(chapter.content);
+                }}
+              >
+                Edit Chapter
+              </button>
+            </>
+          )}
         </div>
       ))}
       <input
@@ -72,6 +149,7 @@ const OneStory = () => {
         onChange={(e) => setNewChapter(e.target.value)}
       />
       <button onClick={addChapter}>Add Chapter</button>
+      <button onClick={deleteLastChapter}>Delete Last Chapter</button>
     </div>
   );
 };
