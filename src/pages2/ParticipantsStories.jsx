@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/authContext";
 import axios from "axios";
-import Navbar from "../components/NavBar";
+import { Link } from "react-router-dom";
 
 const ParticipantsStories = () => {
   const { user } = useContext(AuthContext);
@@ -37,14 +37,16 @@ const ParticipantsStories = () => {
       <div>
         <h2>Your Stories</h2>
         {stories.map((story) => (
-          <div key={story._id}>
-            <h3>{story.title}</h3>
-            <p>Created by: {story.creator.userName}</p>
-            <p>
-              Contributors:{" "}
-              {story.contributors.map((c) => c.userName).join(", ")}
-            </p>
-          </div>
+          <Link to={`/stories/${story._id}`} key={story._id}>
+            <div>
+              <h3>{story.title}</h3>
+              <p>Created by: {story.creator.userName}</p>
+              <p>
+                Contributors:{" "}
+                {story.contributors.map((c) => c.userName).join(", ")}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
     </>
