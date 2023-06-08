@@ -42,11 +42,10 @@ const ParticipantsStories = () => {
             <div>
               <h3>{story.title}</h3>
               <p>
-                {" "}
                 created by: {story.creator ? story.creator.userName : "Unknown"}
               </p>
               <p>
-                Contributors:{" "}
+                Contributors:
                 {story.contributors.map((c) => c.userName).join(", ")}
               </p>
             </div>

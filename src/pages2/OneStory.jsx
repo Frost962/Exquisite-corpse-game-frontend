@@ -100,9 +100,7 @@ const OneStory = () => {
     getStory();
   }, []);
 
-  if (!story) {
-    return <div>Loading...</div>;
-  }
+  if (!stories.length) return <div>Loading</div>;
   return (
     <div>
       <h2>{story.title}</h2>
